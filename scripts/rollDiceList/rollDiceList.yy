@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"rollDiceList",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"rollDiceList",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,2 @@
+// MOUSE ENTER / LEAVE EVENTS
+hover = false; // MOUSE LEAVE
