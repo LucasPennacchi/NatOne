@@ -9,7 +9,7 @@ callback = function(name) {
     switch (name) {
         case "Play":
             targetY = -300;
-			next_menu = obj_saveMenu;
+			next_menu = obj_slotMenu;
             break;
 
         case "Options":
