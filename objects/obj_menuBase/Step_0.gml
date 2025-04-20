@@ -17,6 +17,7 @@ for (var i = 0; i < array_length(buttons); i++) {
     var by = y + i * buttonSpacing;
     if (point_in_rectangle(mouse_x, mouse_y, bx, by, bx + buttonWidth, by + buttonHeight)) {
         hoverIndex = i;
+		selectedIndex = hoverIndex;
     }
 }
 

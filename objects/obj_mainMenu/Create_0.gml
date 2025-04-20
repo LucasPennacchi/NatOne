@@ -1,17 +1,15 @@
 /// Create Event - obj_mainMenu
+event_inherited();
+next_menu = noone;
 
-parent = obj_menuBase;
+instance_create_layer(display_get_gui_width()/2,y,"Instances",obj_title);
 
 buttons = ["Play", "Options", "Credits", "Exit"];
 callback = function(name) {
     switch (name) {
         case "Play":
-            with (id) targetY = -240;
-            with (obj_menuManager) {
-                saveMenu = instance_create_layer(0, display_get_gui_height() + 240, "Instances", obj_saveMenu);
-                saveMenu.targetY = display_get_gui_height() / 2;
-                currentMenu = MenuState.Save;
-            }
+            targetY = -300;
+			next_menu = obj_saveMenu;
             break;
 
         case "Options":
@@ -24,6 +22,6 @@ callback = function(name) {
 			
         case "Exit":
             // fecha o jogo
-			exit;
+			game_end(0);
     }
 }

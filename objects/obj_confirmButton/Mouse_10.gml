@@ -1,2 +1,0 @@
-// MOUSE ENTER / LEAVE EVENTS
-hover = true;  // MOUSE ENTER
