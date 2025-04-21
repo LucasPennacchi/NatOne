@@ -28,3 +28,8 @@ if (mouse_check_button_pressed(mb_left) && hoverIndex != -1) {
 if (keyboard_check_pressed(vk_enter)) {
     if (is_callable(callback)) callback(buttons[selectedIndex]);
 }
+
+var baseX = 80;
+
+selector.targetX = bx; // Pode ajustar dependendo do sprite
+selector.targetY = y + selectedIndex * buttonSpacing;

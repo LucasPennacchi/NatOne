@@ -12,3 +12,6 @@ targetY = display_get_gui_height() / 2;
 
 selectedIndex = 0;
 hoverIndex = -1;
+
+selector = instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_selector);
+
