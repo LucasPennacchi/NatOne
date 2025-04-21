@@ -1,26 +1,30 @@
-/// Create Event - obj_saveMenu
+// Menu options with their positions
 event_inherited();
-next_menu = noone;
-targetY = display_get_gui_height() / 3;
 
-buttons = ["Slot 1", "Slot 2", "Slot 3", "Back"];
-callback = function(name) {
-    switch (name) {
-        case "Slot 1":
-            
-            break;
+menuOptions = [
+    { text: "Slot 1", x: targetX, y: display_get_gui_height() - 250 },
+    { text: "Slot 2", x: targetX, y: display_get_gui_height() - 200 },
+    { text: "Slot 3", x: targetX, y: display_get_gui_height() - 150 },
+	{ text: "Back", x: targetX, y: display_get_gui_height() - 100 },
+];
 
-        case "Slot 2":
+createBoxes();
+
+function menuSelection(selectedIndex){
+	switch (selectedIndex) {
+	    case 0:
+	        
+	        break;
+	    case 1:
+	        
+	        break;
+	    case 2:
+	        
+	        break;
 			
-            break;
-
-        case "Slot 3":
-            
-            break;
-			
-        case "Back":
-            targetY = -300;
-			next_menu = obj_mainMenu;
-			break;
-    }
+	    case 3:
+	        targetY = -300;
+			nextMenu = obj_mainMenu;
+	        break;
+	}
 }

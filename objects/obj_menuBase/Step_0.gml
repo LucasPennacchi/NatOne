@@ -1,35 +1,35 @@
-/// Step Event - obj_menuBase
-
-y = lerp(y, targetY, 0.1);
-
-// Teclado
-if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))) {
-    selectedIndex = (selectedIndex + 1) mod array_length(buttons);
-}
-if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))) {
-    selectedIndex = (selectedIndex - 1 + array_length(buttons)) mod array_length(buttons);
+// Animation
+y = lerp(y, targetY, 0.1)
+if (y <= -290){
+	if (!instance_exists(nextMenu)) instance_create_layer(0,0,"Instances",nextMenu);
+	instance_destroy();
 }
 
-// Mouse
-hoverIndex = -1;
-for (var i = 0; i < array_length(buttons); i++) {
-    var bx = display_get_gui_width() / 2 - buttonWidth / 2;
-    var by = y + i * buttonSpacing;
-    if (point_in_rectangle(mouse_x, mouse_y, bx, by, bx + buttonWidth, by + buttonHeight)) {
-        hoverIndex = i;
-		selectedIndex = hoverIndex;
-    }
+// Input: navigate options
+if (global.key_down) {
+    selectedIndex = (selectedIndex + 1) mod array_length(menuOptions);
+}
+if (global.key_up) {
+    selectedIndex = (selectedIndex + array_length(menuOptions) - 1) mod array_length(menuOptions);
+}
+if (global.key_confirm) {
+	menuSelection(selectedIndex);
 }
 
-if (mouse_check_button_pressed(mb_left) && hoverIndex != -1) {
-    selectedIndex = hoverIndex;
-    if (is_callable(callback)) callback(buttons[selectedIndex]);
-}
-if (keyboard_check_pressed(vk_enter)) {
-    if (is_callable(callback)) callback(buttons[selectedIndex]);
-}
+// Visual feedback
 
-var baseX = 80;
-
-selector.targetX = bx; // Pode ajustar dependendo do sprite
-selector.targetY = y + selectedIndex * buttonSpacing;
+for (var i = 0; i < array_length(textBoxes); i++) {
+	if (i == selectedIndex) {
+		with (textBoxes[i]){
+			boxAlpha = 1;
+		    image_xscale = lerp(image_xscale, 1.1, 0.1);
+		    image_yscale = lerp(image_yscale, 1.1, 0.1);
+		}
+	} else {
+		with (textBoxes[i]){
+			boxAlpha = 0;
+		    image_xscale = lerp(image_xscale, 1.0, 0.1);
+		    image_yscale = lerp(image_yscale, 1.0, 0.1);
+		}
+	}
+}

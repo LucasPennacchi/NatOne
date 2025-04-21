@@ -1,4 +1,5 @@
 // No CREATE EVENT de obj_gameController
+
 global.gameController = id;
 global.characterName = "";     // "Arthur I"
 global.playerName = "";        // Só "Arthur"

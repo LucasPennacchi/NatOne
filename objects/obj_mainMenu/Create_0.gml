@@ -1,27 +1,25 @@
-/// Create Event - obj_mainMenu
+// Menu options with their positions
 event_inherited();
-next_menu = noone;
 
-instance_create_layer(display_get_gui_width()/2,y,"Instances",obj_title);
+menuOptions = [
+    { text: "Start", x: targetX, y: display_get_gui_height() - 200 },
+    { text: "Options", x: targetX, y: display_get_gui_height() - 150 },
+    { text: "Exit", x: targetX, y: display_get_gui_height() - 100 }
+];
 
-buttons = ["Play", "Options", "Credits", "Exit"];
-callback = function(name) {
-    switch (name) {
-        case "Play":
-            targetY = -300;
-			next_menu = obj_slotMenu;
-            break;
+createBoxes();
 
-        case "Options":
-            // abre opções
-            break;
-
-        case "Credits":
-            // abre créditos
-            break;
-			
-        case "Exit":
-            // fecha o jogo
-			game_end(0);
-    }
+function menuSelection(selectedIndex){
+	switch (selectedIndex) {
+	    case 0:
+			targetY = -300
+	        nextMenu = obj_saveMenu;
+	        break;
+	    case 1:
+	        // Open options
+	        break;
+	    case 2:
+	        game_end();
+	        break;
+	}
 }
