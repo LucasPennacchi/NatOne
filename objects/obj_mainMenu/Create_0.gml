@@ -14,6 +14,8 @@ function menuSelection(selectedIndex){
 	    case 0:
 			targetY = -300
 	        nextMenu = obj_saveMenu;
+			instance_create_layer(0,0,"Instances",nextMenu);
+			instance_destroy();
 	        break;
 	    case 1:
 	        // Open options

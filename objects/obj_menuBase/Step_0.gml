@@ -1,9 +1,4 @@
-// Animation
-y = lerp(y, targetY, 0.1)
-if (y <= -290){
-	if (!instance_exists(nextMenu)) instance_create_layer(0,0,"Instances",nextMenu);
-	instance_destroy();
-}
+
 
 // Input: navigate options
 if (global.key_down) {

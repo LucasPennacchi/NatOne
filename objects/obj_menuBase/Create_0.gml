@@ -3,7 +3,7 @@ x = display_get_gui_width() / 2
 y = -250;
 nextMenu = noone;
 
-targetX = display_get_gui_width() / 2;
+targetX = (display_get_gui_width() * 1.5) / 10;
 targetY = display_get_gui_width() / 2;
 
 menuOptions = [];

@@ -25,6 +25,8 @@ function menuSelection(selectedIndex){
 	    case 3:
 	        targetY = -300;
 			nextMenu = obj_mainMenu;
+			instance_create_layer(0,0,"Instances",nextMenu);
+			instance_destroy();
 	        break;
 	}
 }
